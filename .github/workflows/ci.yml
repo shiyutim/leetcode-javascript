@@ -1,0 +1,22 @@
+name: 'github actions build and deploy gh-pages'
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+        run: npm ci
+        run: npm run build
+      - name: Build and Deploy
+        uses: peaceiris/actions-gh-pages@v2
+        env: 
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          EXTERNAL_REPOSITORY: shiyutim.github.io/leetcode-javascript/
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: docs/.vuepress/dist
+        with: 
+          emptyCommits: false
