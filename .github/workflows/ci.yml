@@ -8,13 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - run: npm ci
-      - run: npm run build
+        run: |
+          npm ci
+          npm run build
+
       - name: Build and Deploy
-        uses: peaceiris/actions-gh-pages@v2
-        env: 
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: docs/.vuepress/dist
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with: 
-          emptyCommits: false
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs/.vuepress/dist
+       
