@@ -7,10 +7,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@master
-        run: npm ci
-        run: npm run build
+      - uses: actions/checkout@master
+      - run: npm ci
+      - run: npm run build
       - name: Build and Deploy
         uses: peaceiris/actions-gh-pages@v2
         env: 
