@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>495 提莫攻击 | leetcode for javascript</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    
+    <meta name="description" content="使用 JavaScript 解 leetcoede">
+    <link rel="preload" href="/leetcode-javascript/assets/css/0.styles.9a5ccbbd.css" as="style"><link rel="preload" href="/leetcode-javascript/assets/js/app.c84fcf1a.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/2.e816a52f.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/6.c217c433.js" as="script"><link rel="prefetch" href="/leetcode-javascript/assets/js/3.53e4045c.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/4.4b52d3d1.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/5.ad0fb4cd.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/7.df366f0a.js">
+    <link rel="stylesheet" href="/leetcode-javascript/assets/css/0.styles.9a5ccbbd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/leetcode-javascript/" class="home-link router-link-active"><!----> <span class="site-name">leetcode for javascript</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>说明</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/" aria-current="page" class="sidebar-link">leetcode for javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>401-500</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/401-500/485.html" class="sidebar-link">485 最大连续1的个数</a></li><li><a href="/leetcode-javascript/401-500/495.html" aria-current="page" class="active sidebar-link">495 提莫攻击</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_495-提莫攻击"><a href="#_495-提莫攻击" class="header-anchor">#</a> 495 提莫攻击</h1> <h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>在《英雄联盟》的世界中，有一个叫 “提莫” 的英雄，他的攻击可以让敌方英雄艾希（编者注：寒冰射手）进入中毒状态。现在，给出提莫对艾希的攻击时间序列和提莫攻击的中毒持续时间，你需要输出艾希的中毒状态总时长。</p> <p>你可以认为提莫在给定的时间点进行攻击，并立即使艾希处于中毒状态。</p> <p>示例1:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">2</span>
+输出<span class="token operator">:</span> <span class="token number">4</span>
+原因<span class="token operator">:</span> 第 <span class="token number">1</span> 秒初，提莫开始对艾希进行攻击并使其立即中毒。中毒状态会维持 <span class="token number">2</span> 秒钟，直到第 <span class="token number">2</span> 秒末结束。
+第 <span class="token number">4</span> 秒初，提莫再次攻击艾希，使得艾希获得另外 <span class="token number">2</span> 秒中毒时间。
+所以最终输出 <span class="token number">4</span> 秒。
+</code></pre></div><p>示例2:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">2</span>
+输出<span class="token operator">:</span> <span class="token number">3</span>
+原因<span class="token operator">:</span> 第 <span class="token number">1</span> 秒初，提莫开始对艾希进行攻击并使其立即中毒。中毒状态会维持 <span class="token number">2</span> 秒钟，直到第 <span class="token number">2</span> 秒末结束。
+但是第 <span class="token number">2</span> 秒初，提莫再次攻击了已经处于中毒状态的艾希。
+由于中毒状态不可叠加，提莫在第 <span class="token number">2</span> 秒初的这次攻击会在第 <span class="token number">3</span> 秒末结束。
+所以最终输出 <span class="token number">3</span> 。
+</code></pre></div><p></p> <p>提示：</p> <p>你可以假定时间序列数组的总长度不超过 10000。
+你可以假定提莫攻击时间序列中的数字和提莫攻击的中毒持续时间都是非负整数，并且不超过 10,000,000。</p> <h2 id="题解"><a href="#题解" class="header-anchor">#</a> 题解</h2> <ol><li>遍历一次，每次计算当前数与下一个数之前的差值，如果大于等于中毒时间，则累加时间，否则加上差值。</li></ol> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @param {number[]} timeSeries
+ * @param {number} duration
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">findPoisonedDuration</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">timeSeries<span class="token punctuation">,</span> duration</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>timeSeries<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span>
+
+    <span class="token comment">// 累计值</span>
+    <span class="token keyword">let</span> time <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>timeSeries<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 当前值</span>
+        <span class="token keyword">let</span> current <span class="token operator">=</span> timeSeries<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token comment">// 下一个值</span>
+        <span class="token keyword">let</span> next <span class="token operator">=</span> timeSeries<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token comment">// 差值</span>
+        <span class="token keyword">let</span> diff <span class="token operator">=</span> next <span class="token operator">-</span> current
+
+        <span class="token comment">// 大于等于中毒事件，则直接累加</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>diff <span class="token operator">&gt;=</span> duration<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            time <span class="token operator">+=</span> duration
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 否则加上差值</span>
+            time <span class="token operator">+=</span> diff
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 最后一次中毒时间，不需要比较，直接加上即可</span>
+    time <span class="token operator">+=</span> duration
+    <span class="token keyword">return</span> time
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/leetcode-javascript/401-500/485.html" class="prev">
+        485 最大连续1的个数
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/leetcode-javascript/assets/js/app.c84fcf1a.js" defer></script><script src="/leetcode-javascript/assets/js/2.e816a52f.js" defer></script><script src="/leetcode-javascript/assets/js/6.c217c433.js" defer></script>
+  </body>
+</html>

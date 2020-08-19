@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>485 最大连续1的个数 | leetcode for javascript</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    
+    <meta name="description" content="使用 JavaScript 解 leetcoede">
+    <link rel="preload" href="/leetcode-javascript/assets/css/0.styles.9a5ccbbd.css" as="style"><link rel="preload" href="/leetcode-javascript/assets/js/app.c84fcf1a.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/2.e816a52f.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/5.ad0fb4cd.js" as="script"><link rel="prefetch" href="/leetcode-javascript/assets/js/3.53e4045c.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/4.4b52d3d1.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/6.c217c433.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/7.df366f0a.js">
+    <link rel="stylesheet" href="/leetcode-javascript/assets/css/0.styles.9a5ccbbd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/leetcode-javascript/" class="home-link router-link-active"><!----> <span class="site-name">leetcode for javascript</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>说明</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/" aria-current="page" class="sidebar-link">leetcode for javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>401-500</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/401-500/485.html" aria-current="page" class="active sidebar-link">485 最大连续1的个数</a></li><li><a href="/leetcode-javascript/401-500/495.html" class="sidebar-link">495 提莫攻击</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_485-最大连续1的个数"><a href="#_485-最大连续1的个数" class="header-anchor">#</a> 485 最大连续1的个数</h1> <h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>给定一个二进制数组， 计算其中最大连续1的个数。</p> <p>示例 1:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+输出<span class="token operator">:</span> <span class="token number">3</span>
+解释<span class="token operator">:</span> 开头的两位和最后的三位都是连续<span class="token number">1</span>，所以最大连续<span class="token number">1</span>的个数是 <span class="token number">3.</span>
+</code></pre></div><p>注意：</p> <p>输入的数组只包含 0 和1。
+输入数组的长度是正整数，且不超过 10,000。</p> <h2 id="题解"><a href="#题解" class="header-anchor">#</a> 题解</h2> <ol><li>使用 <code>split</code> 拆分 0，获取到所有带有数字 1 的数组，依次遍历获取字符串的 <code>length</code>，然后找出最大值。</li></ol> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>执行用时：96 ms, 在所有 JavaScript 提交中击败了 40.72% 的用户</p> <p>内存消耗：42.4 MB, 在所有 JavaScript 提交中击败了 22.03% 的用户</p></div> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @param {number[]} nums
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">findMaxConsecutiveOnes</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 拼接后拆分 0，获取所有带 1 的数组，此时所有连续的 1 已经被分配好</span>
+    <span class="token keyword">let</span> numList <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">)</span>
+    <span class="token comment">// 通过 map 返回 被分配好 1 的长度，也是就个数</span>
+    <span class="token comment">// 通过 Math.max 来获取最大值，使用 ... rust 语法</span>
+    <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token operator">...</span>numList<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">num</span> <span class="token operator">=&gt;</span> num<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><ol start="2"><li>这次通过一次遍历找到值。</li></ol> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>执行用时：88 ms, 在所有 JavaScript 提交中击败了 63.44% 的用户</p> <p>内存消耗：40.4 MB, 在所有 JavaScript 提交中击败了 67.40% 的用户</p></div> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">findMaxConsecutiveOnes</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 总共的最大值</span>
+    <span class="token keyword">let</span> maxNum <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token comment">// 遇到 0 之前的值</span>
+    <span class="token keyword">let</span> currentNum <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 如果遇到 1，则当前的值加一</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            currentNum<span class="token operator">++</span>
+            
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 遇到 0，则判断当前累加起来的值，是否比总共的最大值大，如果大，则替换</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>currentNum <span class="token operator">&gt;</span> maxNum<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                 maxNum <span class="token operator">=</span> currentNum
+            <span class="token punctuation">}</span> 
+            <span class="token comment">// 不管是否替换，都需要把当前 1 的值清空，因为需要重新计数</span>
+            currentNum <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 一个坑点，就是最后一个值为 1 的情况下，需要手动判断下是否需要替换</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>nums<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>currentNum <span class="token operator">&gt;</span> maxNum<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            maxNum <span class="token operator">=</span> currentNum
+        <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> maxNum
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/leetcode-javascript/" class="prev router-link-active">
+        leetcode for javascript
+      </a></span> <span class="next"><a href="/leetcode-javascript/401-500/495.html">
+        495 提莫攻击
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/leetcode-javascript/assets/js/app.c84fcf1a.js" defer></script><script src="/leetcode-javascript/assets/js/2.e816a52f.js" defer></script><script src="/leetcode-javascript/assets/js/5.ad0fb4cd.js" defer></script>
+  </body>
+</html>
