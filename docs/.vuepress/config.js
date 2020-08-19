@@ -19,8 +19,8 @@ module.exports = {
               collapsable: false, // 可选的, 默认值是 true,
               sidebarDepth: 0,    // 可选的, 默认值是 1
               children: [
-                  '401-500/401',
                 '401-500/485',
+                '401-500/495',
               ]
             },
           ]
