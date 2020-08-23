@@ -22,6 +22,15 @@ module.exports = {
                 '401-500/414',
                 '401-500/485',
                 '401-500/495',
+                
+              ]
+            },
+            {
+              title: '601-700',
+              collapsable: false,
+              sidebarDepth: 0,
+              children: [
+                '601-700/628',
               ]
             },
           ]
