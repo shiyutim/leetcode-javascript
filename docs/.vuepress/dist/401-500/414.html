@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>414 第三大的数 | leetcode for javascript</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    
+    <meta name="description" content="使用 JavaScript 解 leetcoede">
+    <link rel="preload" href="/leetcode-javascript/assets/css/0.styles.9a5ccbbd.css" as="style"><link rel="preload" href="/leetcode-javascript/assets/js/app.973df1a8.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/2.e816a52f.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/5.2ef1a48e.js" as="script"><link rel="prefetch" href="/leetcode-javascript/assets/js/3.6a1d4653.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/4.4b52d3d1.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/6.68e7491b.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/7.caeb77db.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/8.946148cb.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/9.4e78dded.js">
+    <link rel="stylesheet" href="/leetcode-javascript/assets/css/0.styles.9a5ccbbd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/leetcode-javascript/" class="home-link router-link-active"><!----> <span class="site-name">leetcode for javascript</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>说明</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/" aria-current="page" class="sidebar-link">leetcode for javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>401-500</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/401-500/414.html" aria-current="page" class="active sidebar-link">414 第三大的数</a></li><li><a href="/leetcode-javascript/401-500/485.html" class="sidebar-link">485 最大连续1的个数</a></li><li><a href="/leetcode-javascript/401-500/495.html" class="sidebar-link">495 提莫攻击</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>601-700</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/601-700/628.html" class="sidebar-link">628 三个数的最大乘积</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_414-第三大的数"><a href="#_414-第三大的数" class="header-anchor">#</a> 414 第三大的数</h1> <h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>给定一个非空数组，返回此数组中第三大的数。如果不存在，则返回数组中最大的数。要求算法时间复杂度必须是O(n)。</p> <p>示例 1:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+
+输出<span class="token operator">:</span> <span class="token number">1</span>
+
+解释<span class="token operator">:</span> 第三大的数是 <span class="token number">1.</span>
+</code></pre></div><p>示例 2:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
+
+输出<span class="token operator">:</span> <span class="token number">2</span>
+
+解释<span class="token operator">:</span> 第三大的数不存在<span class="token punctuation">,</span> 所以返回最大的数 <span class="token number">2</span> <span class="token punctuation">.</span>
+</code></pre></div><p>示例 3:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+
+输出<span class="token operator">:</span> <span class="token number">1</span>
+
+解释<span class="token operator">:</span> 注意，要求返回第三大的数，是指第三大且唯一出现的数。
+存在两个值为<span class="token number">2</span>的数，它们都排第二。
+</code></pre></div><h2 id="题解"><a href="#题解" class="header-anchor">#</a> 题解</h2> <ol><li>一种解题思路是数组去重并排序，然后根据排好位置的数组取值即可</li></ol> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>执行用时：92 ms, 在所有 JavaScript 提交中击败了 31.15% 的用户</p> <p>内存消耗：39.8 MB, 在所有 JavaScript 提交中击败了 47.97% 的用户</p></div> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @param {number[]} nums
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">thirdMax</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 使用 Set 数据结构去重</span>
+    <span class="token comment">// 使用 sort 方法排序</span>
+    nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> b <span class="token operator">-</span>a<span class="token punctuation">)</span>
+    <span class="token comment">// 判断如果 nums 的第三个有值的情况下</span>
+    <span class="token comment">// 直接返回即可，否则返回最大的值</span>
+    <span class="token keyword">return</span> nums<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token keyword">undefined</span> <span class="token operator">?</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">:</span> nums<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><ol start="2"><li>另一种解题思路，是维护三个值，遍历一次数组，每次进行比较，然后动态的进行赋值。</li></ol> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>执行用时：84 ms, 在所有 JavaScript 提交中击败了 54.68% 的用户</p> <p>内存消耗：38.1 MB, 在所有 JavaScript 提交中击败了 89.43% 的用户</p></div> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @param {number[]} nums
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">thirdMax</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> min <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment">// 最小值</span>
+    <span class="token keyword">let</span> middle <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">Infinity</span>  <span class="token comment">// 中间值</span>
+    <span class="token keyword">let</span> max <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">Infinity</span>  <span class="token comment">// 最大值</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>l<span class="token operator">=</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>l<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> currentCount <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token comment">// 当前值</span>
+
+        <span class="token comment">// 如果当前值大于 max</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>currentCount <span class="token operator">&gt;</span> max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> tempMax <span class="token operator">=</span> max <span class="token comment">// 储存 max</span>
+            <span class="token keyword">let</span> tempMiddle <span class="token operator">=</span> middle <span class="token comment">// 储存 middle</span>
+            <span class="token comment">/**
+             * 分别把 max 替换为当前值；
+             * 中间值替换为 max
+             * 最小值替换为中间值
+            **/</span>
+            max <span class="token operator">=</span> currentCount
+            middle <span class="token operator">=</span> tempMax
+            min <span class="token operator">=</span> tempMiddle
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span>currentCount <span class="token operator">&lt;</span> max <span class="token operator">&amp;&amp;</span> currentCount <span class="token operator">&gt;</span> middle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> tempMiddle <span class="token operator">=</span> middle <span class="token comment">// 储存中间值</span>
+            <span class="token comment">/**
+             * 中间值替换为当前值
+             * 最小值替换为中间值
+            **/</span>
+            middle <span class="token operator">=</span> currentCount
+            min <span class="token operator">=</span> tempMiddle
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span>currentCount <span class="token operator">&lt;</span> middle <span class="token operator">&amp;&amp;</span> currentCount <span class="token operator">&gt;</span> min<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">/**
+             * 直接替换为最小值
+            **/</span>
+            min <span class="token operator">=</span> currentCount
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 如果 min 不等于 -Infinity，说明已经经过了三轮比较，所以返回 min 即可，否则返回 max
+    **/</span> 
+    <span class="token keyword">if</span><span class="token punctuation">(</span>min <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">Infinity</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> min
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> max
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/leetcode-javascript/" class="prev router-link-active">
+        leetcode for javascript
+      </a></span> <span class="next"><a href="/leetcode-javascript/401-500/485.html">
+        485 最大连续1的个数
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/leetcode-javascript/assets/js/app.973df1a8.js" defer></script><script src="/leetcode-javascript/assets/js/2.e816a52f.js" defer></script><script src="/leetcode-javascript/assets/js/5.2ef1a48e.js" defer></script>
+  </body>
+</html>
