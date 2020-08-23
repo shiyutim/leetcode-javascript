@@ -4,18 +4,25 @@ on:
     branches:
       - master
 jobs:
-  build-and-deploy:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.1
-        with: 
+        uses: actions/checkout@2.3.1
+        with:
           persist-credentials: false
-      - name: install and build
+  build: 
+    needs: [check]
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
         run: |
           npm install
           npm run build
-
+  deploy:
+    needs: [check, build]
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with: 
