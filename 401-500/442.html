@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>442 数组中重复的数据 | leetcode for javascript</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    
+    <meta name="description" content="使用 JavaScript 解 leetcoede">
+    <link rel="preload" href="/leetcode-javascript/assets/css/0.styles.9a5ccbbd.css" as="style"><link rel="preload" href="/leetcode-javascript/assets/js/app.32f64ef2.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/2.e816a52f.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/6.c48fb712.js" as="script"><link rel="prefetch" href="/leetcode-javascript/assets/js/10.c952f389.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/11.5e4fc4f9.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/12.46352783.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/13.2d32d9de.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/3.6ae6a18d.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/4.4b52d3d1.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/5.c77987e3.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/7.22191051.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/8.abf36f5a.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/9.56b82c25.js">
+    <link rel="stylesheet" href="/leetcode-javascript/assets/css/0.styles.9a5ccbbd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/leetcode-javascript/" class="home-link router-link-active"><!----> <span class="site-name">leetcode for javascript</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>说明</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/" aria-current="page" class="sidebar-link">leetcode for javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>401-500</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/401-500/414.html" class="sidebar-link">414 第三大的数</a></li><li><a href="/leetcode-javascript/401-500/442.html" aria-current="page" class="active sidebar-link">442 数组中重复的数据</a></li><li><a href="/leetcode-javascript/401-500/448.html" class="sidebar-link">448 找到所有数组中消失的数字</a></li><li><a href="/leetcode-javascript/401-500/485.html" class="sidebar-link">485 最大连续1的个数</a></li><li><a href="/leetcode-javascript/401-500/495.html" class="sidebar-link">495 提莫攻击</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>601-700</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/601-700/628.html" class="sidebar-link">628 三个数的最大乘积</a></li><li><a href="/leetcode-javascript/601-700/645.html" class="sidebar-link">645 错误的集合</a></li><li><a href="/leetcode-javascript/601-700/697.html" class="sidebar-link">697 数组的度</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_442-数组中重复的数据"><a href="#_442-数组中重复的数据" class="header-anchor">#</a> 442 数组中重复的数据</h1> <h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>给定一个整数数组 a，其中1 ≤ a[i] ≤ n （n为数组长度）, 其中有些元素出现两次而其他元素出现一次。</p> <p>找到所有出现两次的元素。</p> <p>你可以不用到任何额外空间并在O(n)时间复杂度内解决这个问题吗？</p> <p>示例：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>输入<span class="token operator">:</span>
+<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+输出<span class="token operator">:</span>
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+</code></pre></div><h2 id="题解"><a href="#题解" class="header-anchor">#</a> 题解</h2> <ol><li>这个解法的时间复杂度为为 O(n)，而且不使用额外空间。通过修改原数组的方式来寻找重复的值。</li></ol> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">findDuplicates</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 当前的值，因为有可能被修改为 负数，所以为了比较使用 abs 来修改回来</span>
+        <span class="token keyword">let</span> current <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> 
+
+        <span class="token comment">// 默认把值变为负数</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>current <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            nums<span class="token punctuation">[</span>current <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*=</span> <span class="token operator">-</span><span class="token number">1</span>  
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 如果为负数，说明遇到了重复的数</span>
+            result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>current<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><ol start="2"><li>使用了数组来存放出现的值，如果该数组位置有值，说明遇到了重复的。</li></ol> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">findDuplicates</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> current <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>list<span class="token punctuation">[</span>current<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>current<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            list<span class="token punctuation">[</span>current<span class="token punctuation">]</span> <span class="token operator">=</span> current
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/leetcode-javascript/401-500/414.html" class="prev">
+        414 第三大的数
+      </a></span> <span class="next"><a href="/leetcode-javascript/401-500/448.html">
+        448 找到所有数组中消失的数字
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/leetcode-javascript/assets/js/app.32f64ef2.js" defer></script><script src="/leetcode-javascript/assets/js/2.e816a52f.js" defer></script><script src="/leetcode-javascript/assets/js/6.c48fb712.js" defer></script>
+  </body>
+</html>
