@@ -23,6 +23,12 @@
   },
   "homepage": "https://github.com/shiyutim/leetcode-javascript#readme",
   "dependencies": {
+    "ant-design-vue": "^1.6.5",
+    "axios": "^0.20.0",
     "vuepress": "^1.5.3"
+  },
+  "devDependencies": {
+    "less": "^3.12.2",
+    "less-loader": "^7.0.0"
   }
 }
