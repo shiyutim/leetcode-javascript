@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>41 缺失的第一个正数 | leetcode for javascript</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    
+    <meta name="description" content="使用 JavaScript 解 leetcoede">
+    <link rel="preload" href="/leetcode-javascript/assets/css/0.styles.50b65ab3.css" as="style"><link rel="preload" href="/leetcode-javascript/assets/js/app.542c118a.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/2.9b54b018.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/7.9d2611aa.js" as="script"><link rel="prefetch" href="/leetcode-javascript/assets/js/10.fe43b2a6.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/11.8374675d.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/12.06640d37.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/13.845ba694.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/14.71a7dd77.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/15.1b62322a.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/16.ae4f9425.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/3.2bf37f4c.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/4.aadb32f7.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/5.e520b233.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/6.5c398383.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/8.e6de6c13.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/9.2211dfdc.js">
+    <link rel="stylesheet" href="/leetcode-javascript/assets/css/0.styles.50b65ab3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/leetcode-javascript/" class="home-link router-link-active"><!----> <span class="site-name">leetcode for javascript</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>说明</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/" aria-current="page" class="sidebar-link">leetcode for javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>1-100</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/1-100/41.html" aria-current="page" class="active sidebar-link">41 缺失的第一个正数</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>401-500</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/401-500/414.html" class="sidebar-link">414 第三大的数</a></li><li><a href="/leetcode-javascript/401-500/442.html" class="sidebar-link">442 数组中重复的数据</a></li><li><a href="/leetcode-javascript/401-500/448.html" class="sidebar-link">448 找到所有数组中消失的数字</a></li><li><a href="/leetcode-javascript/401-500/485.html" class="sidebar-link">485 最大连续1的个数</a></li><li><a href="/leetcode-javascript/401-500/495.html" class="sidebar-link">495 提莫攻击</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>601-700</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/601-700/628.html" class="sidebar-link">628 三个数的最大乘积</a></li><li><a href="/leetcode-javascript/601-700/645.html" class="sidebar-link">645 错误的集合</a></li><li><a href="/leetcode-javascript/601-700/697.html" class="sidebar-link">697 数组的度</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_41-缺失的第一个正数"><a href="#_41-缺失的第一个正数" class="header-anchor">#</a> 41 缺失的第一个正数</h2> <h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>给你一个未排序的整数数组，请你找出其中没有出现的最小的正整数。</p> <p>示例 1:</p> <div class="language-js extra-class"><pre class="language-js"><code>输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>
+输出<span class="token operator">:</span> <span class="token number">3</span>
+示例 <span class="token number">2</span><span class="token operator">:</span>
+
+输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+输出<span class="token operator">:</span> <span class="token number">2</span>
+示例 <span class="token number">3</span><span class="token operator">:</span>
+
+输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">]</span>
+输出<span class="token operator">:</span> <span class="token number">1</span>
+</code></pre></div><p>提示：</p> <p>你的算法的时间复杂度应为O(n)，并且只能使用常数级别的额外空间。</p> <h2 id="题解"><a href="#题解" class="header-anchor">#</a> 题解</h2> <ol><li>通过一次排序，然后一次遍历通过根据对比数进行比较来寻找最小的数</li></ol> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>执行用时：84 ms, 在所有 JavaScript 提交中击败了 39.55% 的用户</p> <p>内存消耗：37.4 MB, 在所有 JavaScript 提交中击败了 97.26% 的用户</p></div> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * @param {number[]} nums
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">firstMissingPositive</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> min <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment">// 最小的数，默认为 1</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token keyword">return</span> min <span class="token comment">// 如果传空数组，则直接返回 1</span>
+    <span class="token keyword">let</span> current <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment">// 用于对比的数，从 1 开始比较</span>
+    <span class="token keyword">let</span> isNext <span class="token operator">=</span> <span class="token boolean">true</span>  <span class="token comment">// 用来记录是否是数组中没出现过的数</span>
+    <span class="token comment">// 排序，按照从小到大的顺序排列</span>
+    nums <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span>a <span class="token operator">-</span> b<span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> l <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> l<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> item <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token comment">// 当前值</span>
+        <span class="token keyword">let</span> prev <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token number">0</span>  <span class="token comment">// 上一个值，为了排除重复的值</span>
+
+        <span class="token comment">// 只有当前的数大于 0 的时候，同时当前数不是重复数</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>item <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> prev <span class="token operator">!==</span> item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">/**
+             * 如果相同，则把*对比数 +1*
+             * 否则，说明找到了缺失的数
+            */</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>item <span class="token operator">===</span> current <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                current<span class="token operator">++</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                min <span class="token operator">=</span> current
+                isNext <span class="token operator">=</span> <span class="token boolean">false</span>
+                <span class="token keyword">break</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 如果 为 true，说明数组中没有最小的数</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>isNext<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">/**
+         * 这里比较是判断
+         * 当数组的最后一个数（也就是排序后的最大数）大于 0 时，则为 最大数 + 1，例：[1, 2] 为 3
+         * 否则，直接返回 1 即可，例： [-5] 为 1 
+        */</span>
+        min <span class="token operator">=</span> nums<span class="token punctuation">[</span>nums<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> nums<span class="token punctuation">[</span>nums<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">:</span> min
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> min 
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>时间复杂度：<code>O(n)</code>，一次通过 sort 排序，一次 for 循环。</li> <li>空间复杂度： <code>O(1)</code>，使用常数级别的几个变量。</li> <li>最好的情况： 数组中前几位的值就出现了最小数，那么 for 循环直接 break 退出循环，节省了剩下遍历的时间。</li> <li>最坏的情况： 也就是 isNext 为 true 的情况，需要遍历整个数组，数组中没有出现最小的数，那么就是 1 或者 最大数+1。</li></ul> <ol start="2"><li>排序一次，然后遍历依次对比</li></ol> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>执行用时：92 ms, 在所有 JavaScript 提交中击败了 22.94% 的用户</p> <p>内存消耗：37.7 MB, 在所有 JavaScript 提交中击败了 90.85% 的用户</p></div> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * @param {number[]} nums
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">firstMissingPositive</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">let</span> min <span class="token operator">=</span> <span class="token number">1</span>
+    nums <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span>a <span class="token operator">-</span> b<span class="token punctuation">)</span>
+    
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> l <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> l<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>min <span class="token operator">===</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            min<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> min 
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>时间复杂度：<code>O(n)</code>，一次通过 sort 排序，一次 for 循环。</li> <li>空间复杂度： <code>O(1)</code>，使用常数级别的几个变量。</li> <li>最好的情况</li> <li>最坏的情况</li></ul> <ol start="3"><li>分别通过三次遍历来找到值，第一次遍历，把小于等于 0 的数和大于数组长度的数修改为 1，当然修改前还需要判断数组是否包含 1；第二次遍历，把数组里的值当做下标，修改对应的值为负数，重复的值需要先绝对值；第三次遍历寻找值是否大于 0，如果大于 0，说明没有出现过。最后如果都没有，则为数组的长度 +1。</li></ol> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>执行用时：88 ms, 在所有 JavaScript 提交中击败了 30.62% 的用户</p> <p>内存消耗：37.6 MB, 在所有 JavaScript 提交中击败了 93.60% 的用户</p></div> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * @param {number[]} nums
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">firstMissingPositive</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span>length<span class="token operator">:</span> l<span class="token punctuation">}</span> <span class="token operator">=</span> nums
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>nums<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span>  <span class="token comment">// 判断是否有 1，如果没有，则直接返回 1</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>l<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 依次把小于等于 0 的数和大于数组长度的数修改为 1</span>
+        <span class="token comment">// 因为值肯定在 1 到  n.length 之间，超过的都不是目标值</span>
+        <span class="token keyword">let</span> item <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>item <span class="token operator">&lt;=</span><span class="token number">0</span> <span class="token operator">||</span> item <span class="token operator">&gt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>l<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 依次把数值对应的下标修改为负数</span>
+        <span class="token keyword">let</span> item <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        nums<span class="token punctuation">[</span>item<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>item<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>l<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 如果发现大于 0 的数，说明对应下标为最小的数</span>
+        <span class="token keyword">let</span> item <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>item <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> i<span class="token operator">+</span><span class="token number">1</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 如果都没有，则为数组的长度 +1</span>
+    <span class="token keyword">return</span> l<span class="token operator">+</span><span class="token number">1</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>时间复杂度：<code>O(n)</code>，三次 for循环</li> <li>空间复杂度：<code>O(1)</code>，常数级别的空间</li> <li>最好的情况： 当然是数组里没有出现 1，或者最小数在数组的前几位出现，这样遇到了直接返回值并退出函数，节省了剩下遍历的时间。</li> <li>最坏的情况： 数组里没有出现最小数，值为数组的长度 +1，因为需要遍历所有的值。</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/leetcode-javascript/" class="prev router-link-active">
+        leetcode for javascript
+      </a></span> <span class="next"><a href="/leetcode-javascript/401-500/414.html">
+        414 第三大的数
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/leetcode-javascript/assets/js/app.542c118a.js" defer></script><script src="/leetcode-javascript/assets/js/2.9b54b018.js" defer></script><script src="/leetcode-javascript/assets/js/7.9d2611aa.js" defer></script>
+  </body>
+</html>
