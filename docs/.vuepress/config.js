@@ -3,6 +3,8 @@ module.exports = {
     base: '/leetcode-javascript/',
     description: '使用 JavaScript 解 leetcoede',
     themeConfig: {
+      lastUpdated: '最后更新时间',
+      repo: 'shiyutim/leetcode-javascript',
         sidebar: [
             {
               title:  '说明',   // 必要的
@@ -38,6 +40,7 @@ module.exports = {
                 '401-500/414',
                 '401-500/442',
                 '401-500/448',
+                '401-500/453',
                 '401-500/485',
                 '401-500/495',
                 
