@@ -2,7 +2,7 @@
 
 个人使用 javascript 解 leetcode 的笔记
 
-
+定个小目标：把 1000 个点亮
 <show-all-questions />
 <!-- ## 导航 -->
 
