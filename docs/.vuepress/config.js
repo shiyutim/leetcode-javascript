@@ -41,6 +41,14 @@ module.exports = {
               ]
             },
             {
+              title: '301-400',
+              collapsable: false,
+              sidebarDepth: 0,
+              children: [
+                '301-400/396.md',
+              ]
+            },
+            {
               title: '401-500',   // 必要的
             //   path: '/401-500/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
               collapsable: false, // 可选的, 默认值是 true,
