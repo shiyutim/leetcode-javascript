@@ -64,6 +64,14 @@ module.exports = {
               ]
             },
             {
+              title: '501-600',
+              collapsable: false,
+              sidebarDepth: 0,
+              children: [
+                '501-600/566.md',
+              ]
+            },
+            {
               title: '601-700',
               collapsable: false,
               sidebarDepth: 0,
