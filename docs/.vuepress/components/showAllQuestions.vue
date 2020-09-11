@@ -42,7 +42,7 @@ export default {
             let result = []
             list.forEach(item => {
                 let {title} = item
-                title.replace(numReg, (match, $1, $2) => {
+                title && title.replace(numReg, (match, $1, $2) => {
                     let template = {
                         num: $1,
                         title: $2,
