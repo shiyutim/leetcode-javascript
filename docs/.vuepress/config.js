@@ -29,6 +29,7 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 0,
               children: [
+                '101-200/125',
                 '101-200/189',
               ]
             },
@@ -46,6 +47,7 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 0,
               children: [
+                '301-400/303.md',
                 '301-400/396.md',
               ]
             },
@@ -69,6 +71,7 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 0,
               children: [
+                '501-600/520.md',
                 '501-600/566.md',
               ]
             },
