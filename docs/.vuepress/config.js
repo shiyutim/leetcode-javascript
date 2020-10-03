@@ -32,6 +32,7 @@ module.exports = {
             sidebarDepth: 0,
             children: [
               '101-200/125',
+              '101-200/151',
               '101-200/189',
             ]
           },
