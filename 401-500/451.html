@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>451 根据字符出现频率排序 | leetcode for javascript</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    
+    <meta name="description" content="使用 JavaScript 解 leetcoede">
+    <link rel="preload" href="/leetcode-javascript/assets/css/0.styles.50b65ab3.css" as="style"><link rel="preload" href="/leetcode-javascript/assets/js/app.33f07211.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/2.9b54b018.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/34.7c9ee4ad.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/6.28824f4a.js" as="script"><link rel="preload" href="/leetcode-javascript/assets/js/7.02b726a7.js" as="script"><link rel="prefetch" href="/leetcode-javascript/assets/js/10.e95f96b2.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/11.b56dc364.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/12.4d645ec2.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/13.e673ef51.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/14.a5849689.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/15.acc1d78b.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/16.c1abdeca.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/17.2aed7666.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/18.a1d405ed.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/19.d13d2f07.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/20.ad0b047b.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/21.9dd8c8e7.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/22.1ba7128d.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/23.6b85c871.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/24.ba50d5a4.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/25.b7385ba4.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/26.47049a8d.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/27.afe84447.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/28.6318061c.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/29.56603147.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/3.2bf37f4c.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/30.ebe10cf7.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/31.3a2d474d.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/32.56ae45d0.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/33.af1bbba1.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/35.e5150dba.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/36.c683956d.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/37.31453c98.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/38.df4e42e2.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/39.ba924b71.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/4.1f8e0036.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/40.d08f9d77.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/41.db97562d.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/42.b9baa6e7.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/43.08521512.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/44.9845dc7e.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/45.51e0348e.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/46.9ac14f44.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/47.372f3bae.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/5.ba4cf25b.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/8.cd3576f4.js"><link rel="prefetch" href="/leetcode-javascript/assets/js/9.76db0703.js">
+    <link rel="stylesheet" href="/leetcode-javascript/assets/css/0.styles.50b65ab3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/leetcode-javascript/" class="home-link router-link-active"><!----> <span class="site-name">leetcode for javascript</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/shiyutim/leetcode-javascript" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/shiyutim/leetcode-javascript" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>说明</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/" aria-current="page" class="sidebar-link">leetcode for javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>1-100</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/1-100/1.html" class="sidebar-link">1 两数之和</a></li><li><a href="/leetcode-javascript/1-100/14.html" class="sidebar-link">14 最长公共前缀</a></li><li><a href="/leetcode-javascript/1-100/41.html" class="sidebar-link">41 缺失的第一个正数</a></li><li><a href="/leetcode-javascript/1-100/58.html" class="sidebar-link">58 最后一个单词的长度</a></li><li><a href="/leetcode-javascript/1-100/73.html" class="sidebar-link">73 矩阵置零</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>101-200</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/101-200/125.html" class="sidebar-link">125 验证回文串</a></li><li><a href="/leetcode-javascript/101-200/151.html" class="sidebar-link">151 翻转字符串里的单词</a></li><li><a href="/leetcode-javascript/101-200/189.html" class="sidebar-link">189 旋转数组</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>201-300</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/201-300/217.html" class="sidebar-link">217 存在重复元素</a></li><li><a href="/leetcode-javascript/201-300/274.html" class="sidebar-link">274 H 指数</a></li><li><a href="/leetcode-javascript/201-300/283.html" class="sidebar-link">283 移动零</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>301-400</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/301-400/303.html" class="sidebar-link">303 区域和检索 - 数组不可变</a></li><li><a href="/leetcode-javascript/301-400/344.html" class="sidebar-link">344 反转字符串</a></li><li><a href="/leetcode-javascript/301-400/349.html" class="sidebar-link">349 两个数组的交集</a></li><li><a href="/leetcode-javascript/301-400/383.html" class="sidebar-link">383 赎金信</a></li><li><a href="/leetcode-javascript/301-400/387.html" class="sidebar-link">387 字符串中的第一个唯一字符</a></li><li><a href="/leetcode-javascript/301-400/389.html" class="sidebar-link">389 找不同</a></li><li><a href="/leetcode-javascript/301-400/396.html" class="sidebar-link">396 旋转函数</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>401-500</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/401-500/414.html" class="sidebar-link">414 第三大的数</a></li><li><a href="/leetcode-javascript/401-500/434.html" class="sidebar-link">434 字符串中的单词数</a></li><li><a href="/leetcode-javascript/401-500/442.html" class="sidebar-link">442 数组中重复的数据</a></li><li><a href="/leetcode-javascript/401-500/448.html" class="sidebar-link">448 找到所有数组中消失的数字</a></li><li><a href="/leetcode-javascript/401-500/451.html" aria-current="page" class="active sidebar-link">451 根据字符出现频率排序</a></li><li><a href="/leetcode-javascript/401-500/453.html" class="sidebar-link">453 最小移动次数使数组元素相等</a></li><li><a href="/leetcode-javascript/401-500/485.html" class="sidebar-link">485 最大连续1的个数</a></li><li><a href="/leetcode-javascript/401-500/495.html" class="sidebar-link">495 提莫攻击</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>501-600</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/501-600/520.html" class="sidebar-link">520 检测大写字母</a></li><li><a href="/leetcode-javascript/501-600/541.html" class="sidebar-link">541 反转字符串 II</a></li><li><a href="/leetcode-javascript/501-600/557.html" class="sidebar-link">557 反转字符串中的单词 III</a></li><li><a href="/leetcode-javascript/501-600/566.html" class="sidebar-link">566 重塑矩阵</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>601-700</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/leetcode-javascript/601-700/628.html" class="sidebar-link">628 三个数的最大乘积</a></li><li><a href="/leetcode-javascript/601-700/633.html" class="sidebar-link">633 平方数之和</a></li><li><a href="/leetcode-javascript/601-700/645.html" class="sidebar-link">645 错误的集合</a></li><li><a href="/leetcode-javascript/601-700/665.html" class="sidebar-link">665 非递减数列</a></li><li><a href="/leetcode-javascript/601-700/697.html" class="sidebar-link">697 数组的度</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_451-根据字符出现频率排序"><a href="#_451-根据字符出现频率排序" class="header-anchor">#</a> 451 根据字符出现频率排序</h1> <h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>给定一个字符串，请将字符串里的字符按照出现的频率降序排列。</p> <p>示例 1:</p> <div class="language-js extra-class"><pre class="language-js"><code>输入<span class="token operator">:</span>
+<span class="token string">&quot;tree&quot;</span>
+
+输出<span class="token operator">:</span>
+<span class="token string">&quot;eert&quot;</span>
+
+解释<span class="token operator">:</span>
+<span class="token string">'e'</span>出现两次，<span class="token string">'r'</span>和<span class="token string">'t'</span>都只出现一次。
+因此<span class="token string">'e'</span>必须出现在<span class="token string">'r'</span>和<span class="token string">'t'</span>之前。此外，<span class="token string">&quot;eetr&quot;</span>也是一个有效的答案。
+</code></pre></div><p>示例 2:</p> <div class="language-js extra-class"><pre class="language-js"><code>输入<span class="token operator">:</span>
+<span class="token string">&quot;cccaaa&quot;</span>
+
+输出<span class="token operator">:</span>
+<span class="token string">&quot;cccaaa&quot;</span>
+
+解释<span class="token operator">:</span>
+<span class="token string">'c'</span>和<span class="token string">'a'</span>都出现三次。此外，<span class="token string">&quot;aaaccc&quot;</span>也是有效的答案。
+注意<span class="token string">&quot;cacaca&quot;</span>是不正确的，因为相同的字母必须放在一起。
+</code></pre></div><p>示例 3:</p> <div class="language-js extra-class"><pre class="language-js"><code>输入<span class="token operator">:</span>
+<span class="token string">&quot;Aabb&quot;</span>
+
+输出<span class="token operator">:</span>
+<span class="token string">&quot;bbAa&quot;</span>
+
+解释<span class="token operator">:</span>
+此外，<span class="token string">&quot;bbaA&quot;</span>也是一个有效的答案，但<span class="token string">&quot;Aabb&quot;</span>是不正确的。
+注意<span class="token string">'A'</span>和<span class="token string">'a'</span>被认为是两种不同的字符。
+</code></pre></div><h2 id="题解"><a href="#题解" class="header-anchor">#</a> 题解</h2> <ol><li>既然要按照字符出现的顺序降序排列，那么就需要知道每个字符出现的次数，所以首先进行一次遍历，并设置字符为 key，依次递增出现的次数；重要的思路就是使用一个二维数组来储存，其中出现的次数为下标，第二维数组为出现的字符；再一次遍历这个二维数组，并依次拼接这个二维数组即可。</li></ol> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <div>
+执行用时：96 ms, 在所有 JavaScript 提交中击败了 89.95% 的用户
+<br>
+内存消耗：40.9 MB, 在所有 JavaScript 提交中击败了 55.74% 的用户
+</div></div> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * @param {string} s
+ * @return {string}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">frequencySort</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// 统计字符和出现的次数</span>
+    <span class="token keyword">let</span> resultList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment">// 二维数组</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token string">''</span>  <span class="token comment">// 最后的字符</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>s<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> item <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// 获取当前字符</span>
+        <span class="token keyword">let</span> val <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>  <span class="token comment">// 获取 map 里面的值</span>
+        <span class="token comment">// 每次都进行重置：如果存在，则 +1，否则设置为 1</span>
+        map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> val <span class="token operator">==</span> <span class="token keyword">undefined</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> val<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 使用 for of 来遍历 Map 结构</span>
+    <span class="token comment">// 设置 二维数组的值</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> val<span class="token punctuation">]</span> <span class="token keyword">of</span> map<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 如果对应数组里值为空的话，则设置为 []</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>resultList<span class="token punctuation">[</span>val<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            resultList<span class="token punctuation">[</span>val<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// push 值</span>
+            resultList<span class="token punctuation">[</span>val<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span>resultList<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> item <span class="token operator">=</span> resultList<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token comment">// 当前二维数组的值</span>
+        <span class="token comment">// 如果为数组</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> <span class="token punctuation">{</span>length<span class="token operator">:</span> l<span class="token punctuation">}</span> <span class="token operator">=</span> item
+            <span class="token comment">// 一个遍历二维数组的 while循环</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>l<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 使用 repeat 拼接好该出现的次数</span>
+                <span class="token keyword">let</span> str <span class="token operator">=</span> item<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+                result <span class="token operator">+=</span> str
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div><ul><li>
+            时间复杂度：
+            
+        `O(n^2)`，分别使用三个 for循环，其中第三个 for循环内使用了 while循环（假设 repeat 方法为 O(1)）。
+    </li> <li>
+            空间复杂度：
+            
+        `O(n)`，使用三个变量数组对象来储存值
+    </li> <li>
+            最好情况：
+            </li> <li>
+            最坏情况：
+            </li></ul></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/leetcode-javascript/401-500/448.html" class="prev">
+        448 找到所有数组中消失的数字
+      </a></span> <span class="next"><a href="/leetcode-javascript/401-500/453.html">
+        453 最小移动次数使数组元素相等
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/leetcode-javascript/assets/js/app.33f07211.js" defer></script><script src="/leetcode-javascript/assets/js/2.9b54b018.js" defer></script><script src="/leetcode-javascript/assets/js/34.7c9ee4ad.js" defer></script><script src="/leetcode-javascript/assets/js/6.28824f4a.js" defer></script><script src="/leetcode-javascript/assets/js/7.02b726a7.js" defer></script>
+  </body>
+</html>
